@@ -10,7 +10,6 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
         
         /* Brand Colors */
-        .brand-pink { color: #e72582; }
         .brand-blue { color: #1f2a52; }
         .brand-teal { color: #00bec7; }
         .brand-light-blue { background-color: #d2f0f0; }
@@ -38,7 +37,7 @@
             box-sizing: border-box;
         }
         .mySlides {
-            position: relative; /* anchor child elements inside the card */
+            position: relative;
             display: none;
             background-color: #d2f0f0;
             border-radius: 15px;
@@ -80,7 +79,7 @@
             border-radius: 10px;
         }
         .slide-right-panel {
-            position: relative; /* anchor the arrow inside the info panel */
+            position: relative;
             flex: 1;
             padding-left: 40px;
             display: flex;
@@ -89,16 +88,19 @@
             align-items: flex-start;
             height: 100%;
         }
+        .slide-right-panel h1,
+        .slide-right-panel h2,
+        .slide-right-panel h3 {
+            color: #1f2a52; /* dark blue for all headings */
+        }
         .slide-right-panel h2 {
             font-size: 1.5rem;
             font-weight: 600;
-            color: #1f2a52; /* dark blue */
             margin-bottom: 10px;
         }
         .slide-right-panel h1 {
             font-size: 2.5rem;
             font-weight: 700;
-            color: #e72582; /* pink */
             margin-bottom: 20px;
         }
         .slide-right-panel p {
@@ -118,12 +120,12 @@
         .scrollbox::-webkit-scrollbar-track { background: #d2f0f0; border-radius: 10px; }
         .scrollbox::-webkit-scrollbar-thumb { background-color: #abb5bf; border-radius: 10px; border: 2px solid #d2f0f0; }
 
-        /* Right arrow (now inside the right info panel) */
+        /* Right arrow */
         .next {
             cursor: pointer;
             position: absolute;
-            bottom: 16px;  /* inside the panel */
-            right: 16px;   /* inside the panel */
+            bottom: 16px;
+            right: 16px;
             width: 56px;
             height: 56px;
             color: #ffffff;
@@ -132,20 +134,20 @@
             transition: 0.2s ease;
             border-radius: 50%;
             user-select: none;
-            background-color: #00bec7; /* teal */
+            background-color: #00bec7;
             display: flex;
             justify-content: center;
             align-items: center;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             text-decoration: none;
         }
-        .next:hover { background-color: #e72582; transform: scale(1.04); }
+        .next:hover { background-color: #1f2a52; transform: scale(1.04); }
 
         /* Numbered dots */
         .dots-container {
             text-align: center;
             position: absolute;
-            bottom: 60px; /* raised up from bottom */
+            bottom: 60px;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
@@ -153,7 +155,7 @@
         }
         .dot {
             cursor: pointer;
-            height: 28px;   /* larger */
+            height: 28px;
             width: 28px;
             background-color: #abb5bf;
             border-radius: 50%;
@@ -162,12 +164,12 @@
             justify-content: center;
             font-size: 14px;
             font-weight: 700;
-            color: #2e4d6b; /* number colour */
+            color: #2e4d6b;
             transition: all 0.2s ease;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         .dot:hover { filter: brightness(0.95); }
-        .dot.active { background-color: #e72582; color: #ffffff; }
+        .dot.active { background-color: #1f2a52; color: #ffffff; }
 
         .fade { animation-name: fade; animation-duration: 1.5s; }
         @keyframes fade { from {opacity: .4} to {opacity: 1} }
@@ -188,6 +190,7 @@
 
 <div class="slideshow-container">
 
+    <!-- Slide 1 -->
     <div class="mySlides fade">
         <div class="slide-content-wrapper">
             <div class="slide-left-panel">
@@ -203,6 +206,7 @@
         </div>
     </div>
 
+    <!-- Slide 2 -->
     <div class="mySlides fade">
         <div class="slide-content-wrapper">
             <div class="slide-left-panel">
@@ -213,22 +217,21 @@
                 <h1>Type of docs</h1>
                 <div class="scrollbox">
                     <p>You can upload different types of documents and formats into the prompt including:</p>
-                    <!-- Subheadings changed from grey to DARK BLUE -->
-                    <h3 class="font-medium text-lg brand-blue mb-2">Text and Document Files</h3>
+                    <h3 class="font-medium text-lg mb-2">Text and Document Files</h3>
                     <ul class="list-disc pl-5 text-sm brand-dark-blue-text mb-4">
                         <li>.txt - Plain text files</li>
                         <li>.doc / .docx - Microsoft Word documents</li>
-                        <li>.pdf - Portable Document Format (great for formatted reports, resumes, etc.)</li>
+                        <li>.pdf - Portable Document Format</li>
                         <li>.md - Markdown files</li>
                     </ul>
-                    <h3 class="font-medium text-lg brand-blue mb-2">Data Files</h3>
+                    <h3 class="font-medium text-lg mb-2">Data Files</h3>
                     <ul class="list-disc pl-5 text-sm brand-dark-blue-text mb-4">
-                        <li>.csv - Comma-separated values (ideal for spreadsheets and data analysis)</li>
+                        <li>.csv - Comma-separated values</li>
                         <li>.xlsx - Microsoft Excel files</li>
-                        <li>.json - JavaScript Object Notation (structured data)</li>
+                        <li>.json - JavaScript Object Notation</li>
                         <li>.xml - Extensible Markup Language</li>
                     </ul>
-                    <h3 class="font-medium text-lg brand-blue mb-2">Image Files</h3>
+                    <h3 class="font-medium text-lg mb-2">Image Files</h3>
                     <ul class="list-disc pl-5 text-sm brand-dark-blue-text mb-4">
                         <li>.jpg / .jpeg</li>
                         <li>.png</li>
@@ -236,33 +239,33 @@
                         <li>.bmp</li>
                         <li>.tiff</li>
                     </ul>
-                    <h3 class="font-medium text-lg brand-blue mb-2">Audio Files</h3>
+                    <h3 class="font-medium text-lg mb-2">Audio Files</h3>
                     <ul class="list-disc pl-5 text-sm brand-dark-blue-text mb-4">
-                        <li>.mp3 - MPEG Audio Layer III</li>
-                        <li>.wav - Waveform Audio File Format</li>
-                        <li>.flac - Free Lossless Audio Codec</li>
+                        <li>.mp3</li>
+                        <li>.wav</li>
+                        <li>.flac</li>
                     </ul>
-                    <h3 class="font-medium text-lg brand-blue mb-2">Video Files</h3>
+                    <h3 class="font-medium text-lg mb-2">Video Files</h3>
                     <ul class="list-disc pl-5 text-sm brand-dark-blue-text mb-4">
-                        <li>.mp4 - MPEG-4 Video File</li>
-                        <li>.avi - Audio Video Interleave</li>
-                        <li>.mov - Apple QuickTime Movie</li>
+                        <li>.mp4</li>
+                        <li>.avi</li>
+                        <li>.mov</li>
                     </ul>
-                    <h3 class="font-medium text-lg brand-blue mb-2">Presentation Files</h3>
+                    <h3 class="font-medium text-lg mb-2">Presentation Files</h3>
                     <ul class="list-disc pl-5 text-sm brand-dark-blue-text mb-4">
-                        <li>.ppt / .pptx - Microsoft PowerPoint presentations</li>
+                        <li>.ppt / .pptx - Microsoft PowerPoint</li>
                     </ul>
-                    <h3 class="font-medium text-lg brand-blue mb-2">Archive Files</h3>
+                    <h3 class="font-medium text-lg mb-2">Archive Files</h3>
                     <ul class="list-disc pl-5 text-sm brand-dark-blue-text mb-4">
-                        <li>.zip - Zipped file</li>
-                        <li>.rar - Roshal Archive file</li>
+                        <li>.zip</li>
+                        <li>.rar</li>
                     </ul>
-                    <h3 class="font-medium text-lg brand-blue mb-2">Code Files</h3>
+                    <h3 class="font-medium text-lg mb-2">Code Files</h3>
                     <ul class="list-disc pl-5 text-sm brand-dark-blue-text mb-4">
-                        <li>.py - Python script</li>
-                        <li>.js - JavaScript file</li>
-                        <li>.html - HyperText Markup Language file</li>
-                        <li>.css - Cascading Style Sheets file</li>
+                        <li>.py</li>
+                        <li>.js</li>
+                        <li>.html</li>
+                        <li>.css</li>
                     </ul>
                 </div>
                 <a class="next" onclick="plusSlides(1)">&#10095;</a>
@@ -270,6 +273,7 @@
         </div>
     </div>
 
+    <!-- Slide 3 -->
     <div class="mySlides fade">
         <div class="slide-content-wrapper">
             <div class="slide-left-panel">
@@ -278,13 +282,15 @@
             <div class="slide-right-panel">
                 <h2>Step 3</h2>
                 <h1>Webpage</h1>
-                <p>You can copy and paste a website link directly into the AI’s prompt field. The AI will then read and process the content of that webpage, allowing you to ask questions, summarise, or generate new content based on the information it contains.</p>
-                <p>This is incredibly useful for referencing online articles, news, or specific web pages without manually copying all the text.</p>
+                <p>You can copy and paste a website link directly into the AI's prompt field. The AI will then read and process the content of that webpage, allowing you to ask questions, summarise, or generate new content based on the information it contains.
+
+This is incredibly useful for referencing online articles, news, or specific web pages without manually copying all the text.</p>
                 <a class="next" onclick="plusSlides(1)">&#10095;</a>
             </div>
         </div>
     </div>
 
+    <!-- Slide 4 -->
     <div class="mySlides fade">
         <div class="slide-content-wrapper">
             <div class="slide-left-panel">
@@ -293,9 +299,13 @@
             <div class="slide-right-panel">
                 <h2>Step 4</h2>
                 <h1>Snipping tool or Screenshot</h1>
-                <p>Sometimes, the information you need isn’t easily copy-pasted or linked. A snipping tool (or screenshot feature) allows you to capture specific parts of your screen – an image, a table, a diagram, or even text within an image – and upload it as an image file.</p>
-                <p>The AI can then use its visual recognition and optical character recognition (OCR) capabilities to understand and interact with the content within that image. You don’t need to save the image. You can snip or screenshot and paste it into Copilot.</p>
-                <p>This is incredibly useful when you have taken a screenshot with a lot of text and you don’t feel like typing. Ask the AI to type the text in the image.</p>
+                <p>Sometimes, the information you need isn't easily copy-pasted or linked. A snipping tool (or screenshot feature) allows you to capture specific parts of your screen – an image, a table, a diagram, or even text within an image – and upload it as an image file.
+
+The AI can then use its visual recognition and optical character recognition (OCR) capabilities to understand and interact with the content within that image.
+
+Copy and paste the snip or screenshot into the AI and then interact with your content. You don’t need to save the image. You can snip or screenshot and paste it into Copilot.
+
+This is incredibly useful when you have taken a screenshot with a lot of text and you don’t feel like typing. Ask the AI to type the text in the image.</p>
                 <a class="next" onclick="plusSlides(1)">&#10095;</a>
             </div>
         </div>
@@ -312,27 +322,16 @@
 <script>
     let slideIndex = 1;
     showSlides(slideIndex);
-
-    function plusSlides(n) {
-        showSlides(slideIndex += n);
-    }
-
-    function currentSlide(n) {
-        showSlides(slideIndex = n);
-    }
-
+    function plusSlides(n) { showSlides(slideIndex += n); }
+    function currentSlide(n) { showSlides(slideIndex = n); }
     function showSlides(n) {
         let i;
         const slides = document.getElementsByClassName("mySlides");
         const dots = document.getElementsByClassName("dot");
         if (n > slides.length) {slideIndex = 1}
         if (n < 1) {slideIndex = slides.length}
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        for (i = 0; i < dots.length; i++) {
-            dots[i].classList.remove('active');
-        }
+        for (i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
+        for (i = 0; i < dots.length; i++) { dots[i].classList.remove('active'); }
         slides[slideIndex-1].style.display = "flex";
         dots[slideIndex-1].classList.add('active');
     }
